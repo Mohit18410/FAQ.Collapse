@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(211, 211, 211);
+  color: rgb(29, 29, 29);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container h1 {
+  margin-bottom: 10px;
+  font-size: 37px;
+  text-align: center;
+}
+
+.box {
+  background-color: rgb(225, 225, 225);
+  font-size: 18px;
+  margin: 20px;
+  padding: 30px;
+  width: 500px;
+  position: relative;
+  border-radius: 20px;
+  border: 2px solid rgb(69, 69, 69);
+  transition: 0.3s ease;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.box.active {
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 1px 1px 18px rgb(62, 62, 62);
+}
+
+.box.active::before,
+.box.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  font-size: 80px;
+  color: rgb(53, 162, 148);
+  opacity: 0.2;
+  top: 50px;
+  left: 50px;
+  z-index: 0;
+}
+
+.box.active::before {
+  top: -12px;
+  left: -12px;
+  transform: rotateY(180deg);
+}
+
+.toggleButton {
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  background: transparent;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.toggleButton {
+  outline: none;
+}
+
+.toggleButton .fa-xmark {
+  display: none;
+}
+
+.active .toggleButton .fa-xmark {
+  display: inline-block;
+}
+
+.active .toggleButton .fa-angle-down {
+  display: none;
+}
+
+.answer {
+  display: none;
+}
+
+.active .answer {
+  display: block;
+}
